@@ -1,0 +1,66 @@
+
+/* Estilos adicionais para a página de sucesso */
+
+/* Estilo principal da página de sucesso */
+.sucesso-container {
+    background-color: #f0f0f0; /* Cor de fundo clara */
+    border-radius: 10px; /* Bordas arredondadas */
+    max-width: 600px; /* Largura máxima da caixa */
+    margin: 50px auto; /* Centraliza o conteúdo na página */
+    padding: 30px; /* Espaçamento interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilo para o título da página */
+.sucesso-container h1 {
+    color: #28a745; /* Verde para destacar o sucesso */
+    font-size: 2.5rem; /* Tamanho grande para o título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+/* Estilo para o texto de agradecimento */
+.sucesso-container p {
+    color: #333; /* Cor do texto */
+    font-size: 1.2rem; /* Tamanho do texto */
+    margin-bottom: 20px; /* Espaçamento abaixo do parágrafo */
+}
+
+/* Estilo para botão de navegação após sucesso */
+.sucesso-container .btn-voltar {
+    background-color: #d4af37; /* Cor dourada para o botão */
+    color: #1c1c1c; /* Cor escura para o texto */
+    padding: 10px 20px; /* Tamanho do botão */
+    border: none; /* Remove bordas */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho do texto no botão */
+    font-weight: bold; /* Negrito para o texto do botão */
+    cursor: pointer; /* Cursor de pointer */
+    transition: background-color 0.3s ease; /* Transição suave para o hover */
+}
+
+/* Efeito hover para o botão */
+.sucesso-container .btn-voltar:hover {
+    background-color: #ecbe54; /* Cor mais clara ao passar o mouse */
+}
+
+/* Responsividade para a página de sucesso */
+@media (max-width: 768px) {
+    .sucesso-container {
+        padding: 20px; /* Reduz o padding para telas menores */
+        margin: 20px auto; /* Ajusta o espaçamento em telas menores */
+        width: 90%; /* Ajusta a largura para dispositivos móveis */
+    }
+
+    .sucesso-container h1 {
+        font-size: 2rem; /* Diminui o tamanho do título */
+    }
+
+    .sucesso-container p {
+        font-size: 1rem; /* Ajusta o tamanho do texto */
+    }
+
+    .sucesso-container .btn-voltar {
+        width: 100%; /* Botão ocupa 100% da largura em telas menores */
+    }
+}

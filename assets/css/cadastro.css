@@ -1,0 +1,144 @@
+@import url('global.css');
+@import url('perfil.css');
+
+/* Estilos personalizados para a página de cadastro */
+.cadastro-container {
+    background-color: #1c1c1c; /* Usando a cor primária do header e footer */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cadastro-container h2 {
+    color: #d4af37; /* Usando a cor dourada */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cadastro-container a {
+    color:#0c03b9;
+}
+.cadastro-form label {
+    color: #d4af37; /* Cor do texto do label */
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Estilo para campos de texto */
+.cadastro-form input[type="text"],
+.cadastro-form input[type="email"],
+.cadastro-form input[type="password"],
+.cadastro-form input[type="file"] {
+    width: 95%; /* Largura das caixas de texto */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    background-color: #444; /* Cor secundária de fundo */
+    color: #d4af37; /* Cor do texto */
+    transition: all 0.3s ease; /* Transição suave para alterações */
+}
+
+/* Estilo separado para o botão */
+.cadastro-form button {
+    background-color: #d4af37; /* Botão com cor principal */
+    color: #1c1c1c; /* Texto do botão com a cor do fundo principal */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Botão ocupa toda a largura */
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.cadastro-form button:hover {
+    background-color: #ecbe54; /* Mudança de cor ao passar o mouse */
+}
+
+.cadastro-container .error {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .cadastro-container {
+        padding: 20px;
+        width: 90%; /* Ajusta a largura do container */
+    }
+
+    .cadastro-form input[type="text"],
+    .cadastro-form input[type="email"],
+    .cadastro-form input[type="password"],
+    .cadastro-form input[type="file"] {
+        width: 100%; /* Campos de texto ocupam 100% do container */
+        padding: 12px; /* Ajuste de padding */
+        font-size: 16px; /* Aumenta a fonte */
+    }
+
+    .cadastro-form button {
+        width: 100%; /* Botão ocupa toda a largura */
+        padding: 15px;
+        font-size: 18px;
+    }
+}
+
+/* Responsividade para telas extra pequenas */
+@media (max-width: 480px) {
+    .cadastro-container {
+        padding: 15px;
+    }
+
+    .cadastro-form input[type="text"],
+    .cadastro-form input[type="email"],
+    .cadastro-form input[type="password"],
+    .cadastro-form input[type="file"] {
+        width: 93.5%; /* Ajuste total para telas menores */
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .cadastro-form button {
+        width: 100%; /* Botão ocupa toda a largura */
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .cadastro-container h2 {
+        font-size: 20px;
+    }
+}
+
+/* Responsividade para telas muito pequenas (smartphones em modo paisagem) */
+@media (max-width: 320px) {
+    .cadastro-container {
+        padding: 10px;
+    }
+
+    .cadastro-form input[type="text"],
+    .cadastro-form input[type="email"],
+    .cadastro-form input[type="password"],
+    .cadastro-form input[type="file"] {
+        width: 100%; /* Ajuste para 100% do container */
+        padding: 8px; /* Reduz o padding interno */
+        font-size: 12px; /* Fonte menor */
+    }
+
+    .cadastro-form button {
+        width: 100%; /* Botão ocupa toda a largura */
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .cadastro-container h2 {
+        font-size: 18px;
+    }
+}

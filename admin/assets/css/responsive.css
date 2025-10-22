@@ -1,0 +1,46 @@
+/* Estilo para o aviso de rolagem em dispositivos móveis */
+.scroll-hint {
+    display: none;
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Para tabelas em dispositivos pequenos */
+.table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Para rolagem suave */
+}
+
+@media (max-width: 768px) {
+    .scroll-hint {
+        display: block; /* Mostra o aviso de rolagem */
+    }
+
+    table {
+        min-width: 600px; /* Largura mínima para evitar que a tabela seja esmagada */
+    }
+
+    table th, table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    form button[type="submit"] {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    table th, table td {
+        font-size: 10px; /* Ajuste menor para dispositivos pequenos */
+        padding: 5px;
+    }
+
+    form button[type="submit"] {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}

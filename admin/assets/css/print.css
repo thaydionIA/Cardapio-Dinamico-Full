@@ -1,0 +1,61 @@
+/* Estilos específicos para impressão */
+@media print {
+    body {
+        font-size: 10px;
+        width: 58mm;
+        background-color: white;
+        color: black;
+        margin: 0;
+        padding: 0;
+    }
+
+    .cupom {
+        padding: 5px;
+        width: 100%;
+    }
+
+    .cupom h1 {
+        text-align: center;
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .itens {
+        margin-bottom: 10px;
+    }
+
+    .itens table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .itens th, .itens td {
+        text-align: left;
+        padding: 2px 0;
+    }
+
+    .total {
+        text-align: right;
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    .endereco {
+        font-size: 10px;
+        margin-top: 10px;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 10px;
+    }
+
+    button {
+        display: none;
+    }
+
+    footer, .error, .login-container {
+        display: none;
+    }
+}

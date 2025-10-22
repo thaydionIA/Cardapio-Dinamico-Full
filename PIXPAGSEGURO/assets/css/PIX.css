@@ -1,0 +1,121 @@
+/* PIX.css */
+
+/* Estilo geral da página */
+body {
+    background-color: #1c1c1c; /* Fundo escuro */
+    font-family: Arial, sans-serif;
+    color: #d4af37; /* Texto dourado */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container para o conteúdo */
+.container {
+    background-color: #333; /* Fundo escuro para o container */
+    padding: 30px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    text-align: center; /* Centralizar o conteúdo */
+    max-width: 600px; /* Largura máxima do container */
+    margin: auto;
+}
+
+/* Estilo do título */
+h1 {
+    color: #d4af37; /* Cor dourada para o título */
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Estilo da imagem do QR Code */
+#qrcode img {
+    width: 250px; /* Tamanho fixo do QR Code */
+    height: 250px;
+    margin: 20px 0;
+    border-radius: 10px; /* Bordas arredondadas para a imagem */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra na imagem */
+}
+
+/* Caixa de texto para a chave Pix */
+.pix-key-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.pix-key-input {
+    background-color: #222; /* Fundo escuro para a caixa de texto */
+    color: #d4af37; /* Texto dourado */
+    border: 1px solid #444; /* Borda sutil */
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+/* Botão de copiar a chave Pix */
+.copy-btn {
+    background-color: #d4af37; /* Fundo dourado */
+    color: #1c1c1c; /* Texto escuro */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: #ecbe54; /* Cor mais clara ao passar o mouse */
+}
+
+/* Estilo da animação do status do pagamento */
+.pix-status {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    animation: blink 1.5s infinite;
+}
+
+/* Animação de piscar (blink) */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Estilo do cronômetro */
+#timer {
+    font-size: 20px;
+    color: #d4af37; /* Cor dourada */
+    margin-top: 20px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* Reduz o espaçamento para telas menores */
+        width: 90%;
+    }
+
+    #qrcode img {
+        width: 200px; /* Ajusta o tamanho do QR Code em telas menores */
+        height: 200px;
+    }
+
+    .pix-key-input {
+        font-size: 14px; /* Ajusta o tamanho da fonte da chave Pix */
+    }
+
+    .copy-btn {
+        font-size: 14px; /* Ajusta o tamanho do botão em telas menores */
+        padding: 8px 15px;
+    }
+}

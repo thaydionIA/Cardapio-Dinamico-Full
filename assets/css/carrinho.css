@@ -1,0 +1,93 @@
+
+
+.produto-item {
+    position: relative;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.remover-produto {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #ff0000; /* Tom de vermelho */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.remover-produto:hover {
+    color: #7d0000; /* Vermelho mais escuro ao passar o mouse */
+}
+
+/* style.css */
+.adicionar-carrinho-btn {
+    background-color: #d4af37; /* Exemplo de cor */
+    color: white; /* Cor do texto */
+    padding: 7px 10px; /* Tamanho do botão */
+    border: none; /* Remove bordas */
+    border-radius: 10px; /* Cantos arredondados */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de pointer */
+    transition: background-color 0.3s ease; /* Efeito de transição */
+}
+
+/* Adiciona efeito ao passar o mouse */
+.adicionar-carrinho-btn:hover {
+    background-color: #ecbe54; /* Muda a cor ao passar o mouse */
+}
+
+/* Estilo da quantidade container */
+.quantidade-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Estilo dos botões de quantidade */
+.quantidade-btn {
+    background-color: #000; /* Cor preta */
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.quantidade-btn:hover {
+    background-color: #333; /* Cor preta mais clara no hover */
+}
+
+/* Campo de quantidade */
+.quantidade-input {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Arquivo style.css */
+/* Remove as setinhas de incremento/decremento */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove as setinhas de incremento/decremento para navegadores baseados em WebKit (Chrome, Safari) */
+input[type=number] {
+    -webkit-appearance: none; /* Para WebKit */
+    -moz-appearance: textfield; /* Para Firefox */
+    appearance: none; /* Padrão para navegadores mais novos */
+}
+

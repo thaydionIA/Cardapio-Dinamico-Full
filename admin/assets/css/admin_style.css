@@ -1,0 +1,50 @@
+@import url('forms.css');
+@import url('tables.css');
+@import url('footer.css');
+@import url('login.css');
+@import url('responsive.css');
+@import url('print.css');
+/* Estilos gerais para o painel administrativo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #444;
+    color: #0c03b9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.admin-container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #d4af37;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    border-radius: 8px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+.admin-container a  {
+    color: #0c03b9;
+    text-decoration: none;
+}
+.admin-container a:hover  {
+    text-decoration: underline;
+}
+h1 {
+    color: #444;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #0c03b9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

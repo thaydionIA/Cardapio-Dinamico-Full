@@ -1,0 +1,151 @@
+@import url('global.css');
+
+
+
+/* Estilos personalizados para a página de login */
+.login-container {
+    background-color: #1c1c1c; /* Cor primária do header e footer */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    color: #d4af37; /* Cor dourada */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    color: #d4af37; /* Cor do texto do label */
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="text"],
+.login-form input[type="number"],
+.login-form input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    background-color: #444; /* Cor secundária de fundo */
+    color: #d4af37; /* Cor do texto */
+    transition: all 0.3s ease; /* Transição suave para alterações de tamanho */
+}
+
+.login-form button {
+    background-color: #d4af37; /* Botão com cor principal */
+    color: #1c1c1c; /* Texto do botão com a cor do fundo principal */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.login-form a{
+    color: #0c03b9;
+}
+.login-form button:hover {
+    background-color: #ecbe54; /* Mudança de cor ao passar o mouse */
+}
+
+.login-container .error {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.login-container .sucesso {
+    color: #2fed00; /* Define a cor do texto como verde */
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+    background-color: white; /* Define o fundo da caixinha como branco */
+    border: 2px solid #2fed00; /* Define a borda verde */
+    padding: 10px; /* Adiciona espaçamento interno para melhor visualização */
+    border-radius: 5px; /* Arredonda as bordas da caixinha */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra para destacar a caixinha */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .login-form input[type="email"],
+    .login-form input[type="text"],
+    .login-form input[type="number"],
+    .login-form input[type="password"] {
+        width: 80%; /* Reduz a largura para 80% do container */
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .login-form button {
+        padding: 15px 20px;
+        font-size: 18px;
+    }
+}
+
+/* Responsividade para telas extra pequenas */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 15px;
+    }
+
+    .login-form input[type="email"],
+    .login-form input[type="text"],
+    .login-form input[type="number"],
+    .login-form input[type="password"] {
+        width: 93.5%; /* Reduz a largura para 70% do container */
+        padding: 10px; /* Ajusta o espaçamento interno */
+        font-size: 14px;
+    }
+
+    .login-form button {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .login-container h2 {
+        font-size: 20px;
+    }
+}
+
+/* Responsividade para telas muito pequenas (smartphones em modo paisagem) */
+@media (max-width: 320px) {
+    .login-container {
+        padding: 10px;
+    }
+
+    .login-form input[type="email"],
+    .login-form input[type="text"],
+    .login-form input[type="number"],
+    .login-form input[type="password"] {
+        width: 60%; /* Reduz a largura para 60% do container */
+        padding: 8px; /* Menor espaçamento interno */
+        font-size: 12px; /* Fonte reduzida para melhor adaptação */
+    }
+
+    .login-form button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .login-container h2 {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,241 @@
+@import url('cadastro.css');
+@import url('carrinho.css');
+@import url('global.css');
+@import url('login.css');
+@import url('perfil.css');
+@import url('sucesso.css');
+
+/* Estilos personalizados para a página de perfil */
+.perfil-container {
+    background-color: #1c1c1c; /* Cor de fundo principal */
+    padding: 25px; /* Reduzido para ajustar ao tamanho menor */
+    border-radius: 10px;
+    max-width: 500px; /* Reduzido de 600px para 500px */
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+}
+
+.perfil-container h2 {
+    color: #d4af37; /* Cor dourada como destaque */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px; /* Ajuste de tamanho da fonte */
+}
+
+.perfil-form label {
+    color: #d4af37; /* Cor dourada para o texto dos labels */
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.perfil-form input[type="text"],
+.perfil-form input[type="email"],
+.perfil-form input[type="password"],
+.perfil-form input[type="file"] {
+    width: 95%; /* Mantém a largura para acompanhar o container menor */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    background-color: #444; /* Cor secundária de fundo */
+    color: #d4af37; /* Cor do texto */
+}
+
+.perfil-form button {
+    background-color: #d4af37; /* Cor dourada para o botão */
+    color: #1c1c1c; /* Cor de fundo principal para o texto do botão */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.perfil-form button:hover {
+    background-color: #ecbe54; /* Mudança de cor no hover */
+}
+
+/* Estilo da foto de perfil (redimensionada) */
+.perfil-foto {
+    display: block;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    width: 90px; /* Reduzido para se ajustar ao container menor */
+    height: 90px; /* Reduzido para se ajustar ao container menor */
+    object-fit: cover; /* Mantém a proporção da imagem */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .perfil-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .perfil-container h2 {
+        font-size: 20px; /* Reduzido o tamanho do título */
+    }
+
+    .perfil-form input[type="text"],
+    .perfil-form input[type="email"],
+    .perfil-form input[type="password"],
+    .perfil-form input[type="file"] {
+        font-size: 13px; /* Ajuste do tamanho da fonte */
+    }
+
+    .perfil-form button {
+        font-size: 14px; /* Ajuste do tamanho da fonte do botão */
+        padding: 12px;
+    }
+
+    .perfil-foto {
+        width: 70px; /* Ajuste para se adequar ao tamanho menor */
+        height: 70px;
+    }
+
+    .btn-excluir {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+/* Responsividade para telas extra pequenas */
+@media (max-width: 480px) {
+    .perfil-container {
+        padding: 15px;
+    }
+
+    .perfil-container h2 {
+        font-size: 18px; /* Reduzido ainda mais para telas pequenas */
+    }
+
+    .perfil-form input[type="text"],
+    .perfil-form input[type="email"],
+    .perfil-form input[type="password"],
+    .perfil-form input[type="file"] {
+        font-size: 12px; /* Fonte menor */
+        padding: 8px; /* Padding menor */
+    }
+
+    .perfil-form button {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .perfil-foto {
+        width: 60px; /* Reduzido para tamanhos menores */
+        height: 60px;
+    }
+
+    .btn-excluir {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 320px) {
+    .perfil-container {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .perfil-container h2 {
+        font-size: 16px; /* Reduzido para caber em telas muito pequenas */
+    }
+
+    .perfil-form input[type="text"],
+    .perfil-form input[type="email"],
+    .perfil-form input[type="password"],
+    .perfil-form input[type="file"] {
+        font-size: 11px; /* Fonte menor */
+        padding: 6px; /* Padding reduzido */
+    }
+
+    .perfil-form button {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .perfil-foto {
+        width: 50px; /* Reduzido para tamanhos muito pequenos */
+        height: 50px;
+    }
+
+    .btn-excluir {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+/* Estilo do botão de excluir perfil */
+.btn-excluir {
+    background-color: #ff4d4d; /* Cor vermelha para chamar a atenção */
+    color: white; /* Texto branco */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Remove bordas */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer; /* Cursor tipo pointer */
+    transition: background-color 0.3s ease; /* Transição suave no hover */
+    margin-top: 20px; /* Espaço acima do botão */
+    display: block;
+    width: 100%; /* Ocupa toda a largura */
+    text-align: center; /* Centraliza o texto */
+}
+
+.btn-excluir:hover {
+    background-color: #e60000; /* Cor mais escura no hover */
+}
+
+/* Contêiner da foto de perfil */
+.foto-container {
+    position: relative;
+    width: 120px; /* Ajustado para acompanhar o container menor */
+    height: 120px;
+    margin: 0 auto 15px;
+}
+
+.foto-label {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.perfil-foto {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Estilização do ícone da câmera */
+.icon-camera {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 24px;
+    color: #d4af37;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.icon-camera:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}

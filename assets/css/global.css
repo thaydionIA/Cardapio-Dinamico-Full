@@ -1,0 +1,201 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #444; /* Cor secundária */
+    color: #d4af37; /* Cor do texto */ 
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Header e Footer, cabeçalho e rodapé */
+header, footer {
+    background-color: #1c1c1c; /* Cor primária */
+    color: #d4af37;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+/* Links de navegação */
+nav ul li a {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+/* Seções */
+.section-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Produtos Container */
+.produtos-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Define três colunas iguais */
+    gap: 10px; /* Espaçamento entre os itens */
+    padding: 20px 0;
+}
+
+/* Produtos */
+.produto-item {
+    background-color: #f0d28b;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: flex-start;
+}
+
+.produto-item:hover {
+    transform: scale(1.05); /* Pequeno zoom quando o mouse está sobre o item */
+}
+
+.produto-imagem img {
+    max-width: 150px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 8px;
+    display: block;
+}
+
+.produto-info {
+    flex-grow: 1;
+}
+
+.produto-info h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333; /* Usando a cor do texto principal */
+}
+
+.produto-info p {
+    margin: 10px 0;
+    color: #333; /* Usando a cor do texto principal */
+}
+
+.produto-info .preco {
+    font-weight: bold;
+    color: #333;
+}
+
+.banner {
+    background-color: #f0d28b; /* Cor de fundo suave */
+    padding: 20px; /* Espaçamento interno */
+    margin: 20px auto; /* Espaçamento externo e centralização */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar o banner */
+    max-width: 800px; /* Largura máxima do banner */
+    text-align: center; /* Centralizar texto */
+}
+
+.banner h2 {
+    color: #333; /* Cor do título */
+    font-size: 24px; /* Tamanho da fonte do título */
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+}
+
+.banner p {
+    color: #555; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte do texto */
+}
+
+.banner img {
+    margin-top: 15px; /* Espaçamento acima da imagem */
+    max-width: 100%; /* Imagem responsiva */
+    height: auto; /* Manter proporção da imagem */
+    border-radius: 4px; /* Bordas arredondadas na imagem */
+}
+
+/* Rodapé */
+footer {
+    background-color: #1c1c1c;
+    color: #d4af37;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    .logo-container, .return-button-container, nav {
+        margin-bottom: 10px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .logo {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .return-button {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .produtos-container {
+        grid-template-columns: 1fr; /* Ajusta para uma coluna em telas menores */
+        align-items: center;
+    }
+
+    .produto-item {
+        max-width: 100%;
+    }
+}
+footer a {
+    color: #0c03b9;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
