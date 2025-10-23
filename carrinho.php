@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'db/conexao.php'; // Ajuste o caminho conforme necessário
-include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico-full/header.php';
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['user_id'])) {
@@ -77,7 +77,7 @@ if (empty($_SESSION['carrinho'])) {
             echo "<div class='produto-item' style='position: relative; padding: 15px; border: 1px solid #ddd; margin-bottom: 10px;'>";
             echo "<div class='produto-imagem'>";
             if ($produto['imagem']) {
-                echo "<img src='/cardapio-dinamico/admin/uploads/produtos/" . htmlspecialchars($produto['imagem']) . "' alt='" . htmlspecialchars($produto['nome']) . "'>";
+                echo "<img src='/cardapio-dinamico-full/admin/uploads/produtos/" . htmlspecialchars($produto['imagem']) . "' alt='" . htmlspecialchars($produto['nome']) . "'>";
             }
             echo "</div>";
             echo "<div class='produto-info'>";
@@ -109,7 +109,7 @@ require_once 'footer.php'; // Inclui o rodapé
 ?>
 
 <!-- Inclua o script.js e garanta que o contador seja atualizado -->
-<script src="/cardapio-dinamico/assets/js/script.js"></script>
+<script src="/cardapio-dinamico-full/assets/js/script.js"></script>
 <script>
     // Chama a função para atualizar o contador do carrinho ao carregar a página
     document.addEventListener('DOMContentLoaded', () => {

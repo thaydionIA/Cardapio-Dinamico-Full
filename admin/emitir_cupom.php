@@ -45,7 +45,7 @@ $stmt_itens->execute();
 $itens_pedido = $stmt_itens->fetchAll(PDO::FETCH_ASSOC);
 
 // Incluir o header-ad.php
-include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico/header-ad.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico-full/header-ad.php';
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +55,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico/header-ad.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nome Reservado para Cliente</title>
     <!-- Puxando o arquivo de estilos externos -->
-    <link rel="stylesheet" href="/cardapio-dinamico/assets/css/admin_style.css">
+    <link rel="stylesheet" href="/cardapio-dinamico-full/assets/css/admin_style.css">
     <style>
         /* Estilos que serão aplicados apenas na impressão */
         @media print {
@@ -201,5 +201,5 @@ include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico/header-ad.php';
 
 <?php 
 // Incluir o footer-ad.php (para exibir no navegador, mas será oculto na impressão)
-include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico/footer-ad.php'; 
+include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico-full/footer-ad.php'; 
 ?>

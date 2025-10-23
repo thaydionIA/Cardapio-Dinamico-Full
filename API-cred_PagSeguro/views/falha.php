@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento Falhou</title>
-    <link rel="stylesheet" href="/cardapio-dinamico/assets/css/style.css">
+    <link rel="stylesheet" href="/cardapio-dinamico-full/assets/css/style.css">
     <style>
         /* Estilo para os botões */
         .btn-voltar, .btn-tentar {
@@ -77,8 +77,8 @@
 
         <!-- Botões para tentar novamente ou voltar à página inicial -->
         <div class="btn-container">
-            <a href="/cardapio-dinamico/API-cred_PagSeguro/views/index.php" class="btn-tentar">Tentar Novamente</a>
-            <a href="/cardapio-dinamico/index.php" class="btn-voltar">Voltar para a Página Inicial</a>
+            <a href="/cardapio-dinamico-full/API-cred_PagSeguro/views/index.php" class="btn-tentar">Tentar Novamente</a>
+            <a href="/cardapio-dinamico-full/index.php" class="btn-voltar">Voltar para a Página Inicial</a>
         </div>
     </main>
 

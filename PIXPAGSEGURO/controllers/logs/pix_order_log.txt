@@ -1,0 +1,2174 @@
+Array
+(
+    [error_messages] => Array
+        (
+            [0] => Array
+                (
+                    [code] => 40002
+                    [description] => invalid notification url
+                    [parameter_name] => notification_urls[0]
+                )
+
+        )
+
+)
+Array
+(
+    [id] => ORDE_6885F341-8B73-48F5-86A7-1FE9170E0BCE
+    [reference_id] => pedido-1-1761228919
+    [created_at] => 2025-10-23T11:15:18.178-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-22
+                    [name] => Nome do Produto
+                    [quantity] => 1
+                    [unit_amount] => 1000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_A6596296-AF49-4F38-9903-DD56C9209575
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 1000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/A6596296-AF49-4F38-9903-DD56C920957527600016BR.COM.PAGSEGURO0136A6596296-AF49-4F38-9903-DD56C9209575520489995303986540510.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***63041D8A
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_A6596296-AF49-4F38-9903-DD56C9209575/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_A6596296-AF49-4F38-9903-DD56C9209575/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_6885F341-8B73-48F5-86A7-1FE9170E0BCE
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_6885F341-8B73-48F5-86A7-1FE9170E0BCE/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+Array
+(
+    [id] => ORDE_65CB4B3E-32BD-4395-9375-AC1F350B74B5
+    [reference_id] => pedido-1-1761230774
+    [created_at] => 2025-10-23T11:46:14.039-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-2
+                    [name] => Nome do produto
+                    [quantity] => 1
+                    [unit_amount] => 200000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_EF7C560C-FF62-435F-B2DF-3DE386C5BD7F
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 200000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/EF7C560C-FF62-435F-B2DF-3DE386C5BD7F27600016BR.COM.PAGSEGURO0136EF7C560C-FF62-435F-B2DF-3DE386C5BD7F52048999530398654072000.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***63045C5F
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_EF7C560C-FF62-435F-B2DF-3DE386C5BD7F/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_EF7C560C-FF62-435F-B2DF-3DE386C5BD7F/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_65CB4B3E-32BD-4395-9375-AC1F350B74B5
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_65CB4B3E-32BD-4395-9375-AC1F350B74B5/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+Array
+(
+    [id] => ORDE_66D93CF2-F0D7-4367-9A8A-ED3D29624060
+    [reference_id] => pedido-1-1761231455
+    [created_at] => 2025-10-23T11:57:35.125-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-22
+                    [name] => Nome do Produto
+                    [quantity] => 1
+                    [unit_amount] => 1000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_8115F626-01B9-49F4-8429-E7EAB94CA4EF
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 1000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/8115F626-01B9-49F4-8429-E7EAB94CA4EF27600016BR.COM.PAGSEGURO01368115F626-01B9-49F4-8429-E7EAB94CA4EF520489995303986540510.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***6304086A
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_8115F626-01B9-49F4-8429-E7EAB94CA4EF/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_8115F626-01B9-49F4-8429-E7EAB94CA4EF/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_66D93CF2-F0D7-4367-9A8A-ED3D29624060
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_66D93CF2-F0D7-4367-9A8A-ED3D29624060/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+Array
+(
+    [id] => ORDE_EE775D15-53E9-4D71-B1F0-0737D619C619
+    [reference_id] => pedido-1-1761232470
+    [created_at] => 2025-10-23T12:14:29.660-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-22
+                    [name] => Nome do Produto
+                    [quantity] => 1
+                    [unit_amount] => 1000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_2CEF0AA9-692A-413D-989C-F22150284B9F
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 1000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/2CEF0AA9-692A-413D-989C-F22150284B9F27600016BR.COM.PAGSEGURO01362CEF0AA9-692A-413D-989C-F22150284B9F520489995303986540510.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***63046F97
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_2CEF0AA9-692A-413D-989C-F22150284B9F/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_2CEF0AA9-692A-413D-989C-F22150284B9F/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+            [0] => https://webhook.site/7e9a29f1-3ffe-4c38-a30e-eb8e4e373d67
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_EE775D15-53E9-4D71-B1F0-0737D619C619
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_EE775D15-53E9-4D71-B1F0-0737D619C619/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+Array
+(
+    [id] => ORDE_CC4C4CA1-8A0A-4614-AAA0-0FA3A7CF7307
+    [reference_id] => pedido-1-1761232926
+    [created_at] => 2025-10-23T12:22:05.580-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-21
+                    [name] => Arroz
+                    [quantity] => 1
+                    [unit_amount] => 1000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_47FF3686-A0FB-4207-BF1F-B416151FBD6C
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 1000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/47FF3686-A0FB-4207-BF1F-B416151FBD6C27600016BR.COM.PAGSEGURO013647FF3686-A0FB-4207-BF1F-B416151FBD6C520489995303986540510.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***6304E32B
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_47FF3686-A0FB-4207-BF1F-B416151FBD6C/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_47FF3686-A0FB-4207-BF1F-B416151FBD6C/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+            [0] => https://webhook.site/77f1f66a-35c4-423f-a76f-a032894faab9
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_CC4C4CA1-8A0A-4614-AAA0-0FA3A7CF7307
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_CC4C4CA1-8A0A-4614-AAA0-0FA3A7CF7307/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+Array
+(
+    [id] => ORDE_B5A91FBB-E244-4C2F-8C04-A0B7B6C3EA4F
+    [reference_id] => pedido-1-1761234367
+    [created_at] => 2025-10-23T12:46:05.987-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-21
+                    [name] => Arroz
+                    [quantity] => 1
+                    [unit_amount] => 1000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_4115F708-A202-4F24-BA2A-5B086D66F45C
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 1000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/4115F708-A202-4F24-BA2A-5B086D66F45C27600016BR.COM.PAGSEGURO01364115F708-A202-4F24-BA2A-5B086D66F45C520489995303986540510.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***63048DD0
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_4115F708-A202-4F24-BA2A-5B086D66F45C/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_4115F708-A202-4F24-BA2A-5B086D66F45C/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+            [0] => https://webhook.site/77f1f66a-35c4-423f-a76f-a032894faab9
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_B5A91FBB-E244-4C2F-8C04-A0B7B6C3EA4F
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_B5A91FBB-E244-4C2F-8C04-A0B7B6C3EA4F/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+Array
+(
+    [id] => ORDE_B1B316E6-99E6-4EE9-8390-6117EB90901B
+    [reference_id] => pedido-1-1761234448
+    [created_at] => 2025-10-23T12:47:27.688-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-21
+                    [name] => Arroz
+                    [quantity] => 1
+                    [unit_amount] => 1000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_DEAB8E8F-965F-4A4F-8F90-84C87DB0B91B
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 1000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/DEAB8E8F-965F-4A4F-8F90-84C87DB0B91B27600016BR.COM.PAGSEGURO0136DEAB8E8F-965F-4A4F-8F90-84C87DB0B91B520489995303986540510.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***63044BC4
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_DEAB8E8F-965F-4A4F-8F90-84C87DB0B91B/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_DEAB8E8F-965F-4A4F-8F90-84C87DB0B91B/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+            [0] => https://webhook.site/77f1f66a-35c4-423f-a76f-a032894faab9
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_B1B316E6-99E6-4EE9-8390-6117EB90901B
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_B1B316E6-99E6-4EE9-8390-6117EB90901B/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+Array
+(
+    [id] => ORDE_7ED3CBFD-E344-4FE0-B95E-09CDB280A858
+    [reference_id] => pedido-1-1761236001
+    [created_at] => 2025-10-23T13:13:20.433-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-21
+                    [name] => Arroz
+                    [quantity] => 1
+                    [unit_amount] => 1000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_C9BD440B-0A09-44CD-911B-1BB0286AB6EC
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 1000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/C9BD440B-0A09-44CD-911B-1BB0286AB6EC27600016BR.COM.PAGSEGURO0136C9BD440B-0A09-44CD-911B-1BB0286AB6EC520489995303986540510.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***63044DA7
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_C9BD440B-0A09-44CD-911B-1BB0286AB6EC/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_C9BD440B-0A09-44CD-911B-1BB0286AB6EC/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+            [0] => https://webhook.site/77f1f66a-35c4-423f-a76f-a032894faab9
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_7ED3CBFD-E344-4FE0-B95E-09CDB280A858
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_7ED3CBFD-E344-4FE0-B95E-09CDB280A858/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+Array
+(
+    [id] => ORDE_84BFC8A6-6135-49A1-9DA6-8D13D732BF4B
+    [reference_id] => pedido-1-1761236644
+    [created_at] => 2025-10-23T13:24:03.934-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-21
+                    [name] => Arroz
+                    [quantity] => 1
+                    [unit_amount] => 1000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_A3BA4BD6-8226-4BB8-8E1F-D24A2E827431
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 1000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/A3BA4BD6-8226-4BB8-8E1F-D24A2E82743127600016BR.COM.PAGSEGURO0136A3BA4BD6-8226-4BB8-8E1F-D24A2E827431520489995303986540510.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***6304F397
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_A3BA4BD6-8226-4BB8-8E1F-D24A2E827431/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_A3BA4BD6-8226-4BB8-8E1F-D24A2E827431/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+            [0] => https://webhook.site/77f1f66a-35c4-423f-a76f-a032894faab9
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_84BFC8A6-6135-49A1-9DA6-8D13D732BF4B
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_84BFC8A6-6135-49A1-9DA6-8D13D732BF4B/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+Array
+(
+    [id] => ORDE_458E2AE1-A6A2-48C5-9A8D-41B5DACFCFDA
+    [reference_id] => pedido-1-1761237267
+    [created_at] => 2025-10-23T13:34:26.455-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-22
+                    [name] => Nome do Produto
+                    [quantity] => 1
+                    [unit_amount] => 1000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_16E6CFF7-E78C-4900-9470-6D54F4EFD5E2
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 1000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/16E6CFF7-E78C-4900-9470-6D54F4EFD5E227600016BR.COM.PAGSEGURO013616E6CFF7-E78C-4900-9470-6D54F4EFD5E2520489995303986540510.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***6304F171
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_16E6CFF7-E78C-4900-9470-6D54F4EFD5E2/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_16E6CFF7-E78C-4900-9470-6D54F4EFD5E2/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+            [0] => https://webhook.site/77f1f66a-35c4-423f-a76f-a032894faab9
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_458E2AE1-A6A2-48C5-9A8D-41B5DACFCFDA
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_458E2AE1-A6A2-48C5-9A8D-41B5DACFCFDA/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+Array
+(
+    [id] => ORDE_4F7BA59C-3A35-49F3-975D-1DBA901C6FBB
+    [reference_id] => pedido-1-1761238157
+    [created_at] => 2025-10-23T13:49:16.984-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-29
+                    [name] => testeLock
+                    [quantity] => 1
+                    [unit_amount] => 15000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_6BDB8639-194A-4D58-91FE-FE3E04ADDEC1
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 15000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/6BDB8639-194A-4D58-91FE-FE3E04ADDEC127600016BR.COM.PAGSEGURO01366BDB8639-194A-4D58-91FE-FE3E04ADDEC15204899953039865406150.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***63044D0B
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_6BDB8639-194A-4D58-91FE-FE3E04ADDEC1/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_6BDB8639-194A-4D58-91FE-FE3E04ADDEC1/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+            [0] => https://webhook.site/77f1f66a-35c4-423f-a76f-a032894faab9
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_4F7BA59C-3A35-49F3-975D-1DBA901C6FBB
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_4F7BA59C-3A35-49F3-975D-1DBA901C6FBB/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+
+
+2025-10-23 17:03:30
+Array
+(
+    [id] => ORDE_DE06ECEC-D064-4DB2-890E-48B9A0F8061B
+    [reference_id] => pedido-1-1761239009
+    [created_at] => 2025-10-23T14:03:28.479-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-22
+                    [name] => Nome do Produto
+                    [quantity] => 1
+                    [unit_amount] => 1000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_F6DE60C5-E238-4802-B472-9FBE8D3996C1
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 1000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/F6DE60C5-E238-4802-B472-9FBE8D3996C127600016BR.COM.PAGSEGURO0136F6DE60C5-E238-4802-B472-9FBE8D3996C1520489995303986540510.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***6304F1D2
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_F6DE60C5-E238-4802-B472-9FBE8D3996C1/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_F6DE60C5-E238-4802-B472-9FBE8D3996C1/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+            [0] => https://webhook.site/77f1f66a-35c4-423f-a76f-a032894faab9
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_DE06ECEC-D064-4DB2-890E-48B9A0F8061B
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_DE06ECEC-D064-4DB2-890E-48B9A0F8061B/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+
+
+2025-10-23 17:16:16
+Array
+(
+    [id] => ORDE_D5CF4D65-0CAE-4CB0-AC5D-827AB595C3F4
+    [reference_id] => pedido-1-1761239775
+    [created_at] => 2025-10-23T14:16:14.843-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-26
+                    [name] => Nome do Produto
+                    [quantity] => 1
+                    [unit_amount] => 1000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_3AE91F68-5F7A-4228-8F97-605B1DCD4264
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 1000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/3AE91F68-5F7A-4228-8F97-605B1DCD426427600016BR.COM.PAGSEGURO01363AE91F68-5F7A-4228-8F97-605B1DCD4264520489995303986540510.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***63048E4A
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_3AE91F68-5F7A-4228-8F97-605B1DCD4264/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_3AE91F68-5F7A-4228-8F97-605B1DCD4264/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+            [0] => https://webhook.site/77f1f66a-35c4-423f-a76f-a032894faab9
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_D5CF4D65-0CAE-4CB0-AC5D-827AB595C3F4
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_D5CF4D65-0CAE-4CB0-AC5D-827AB595C3F4/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+
+
+2025-10-23 17:16:58
+Array
+(
+    [id] => ORDE_B32C2017-44EA-4551-A43C-E443FB60859D
+    [reference_id] => pedido-1-1761239817
+    [created_at] => 2025-10-23T14:16:56.212-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-4
+                    [name] => Nome do produto
+                    [quantity] => 1
+                    [unit_amount] => 500000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_AC0C1BBB-1133-444F-B8AC-9EEC972758B2
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 500000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/AC0C1BBB-1133-444F-B8AC-9EEC972758B227600016BR.COM.PAGSEGURO0136AC0C1BBB-1133-444F-B8AC-9EEC972758B252048999530398654075000.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***63044849
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_AC0C1BBB-1133-444F-B8AC-9EEC972758B2/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_AC0C1BBB-1133-444F-B8AC-9EEC972758B2/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+            [0] => https://webhook.site/77f1f66a-35c4-423f-a76f-a032894faab9
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_B32C2017-44EA-4551-A43C-E443FB60859D
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_B32C2017-44EA-4551-A43C-E443FB60859D/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+
+
+2025-10-23 17:23:01
+Array
+(
+    [id] => ORDE_552AC953-088D-4399-94D6-AC4B453C62E7
+    [reference_id] => pedido-1-1761240180
+    [created_at] => 2025-10-23T14:22:59.072-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-27
+                    [name] => Nome do Produto
+                    [quantity] => 1
+                    [unit_amount] => 1000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_F7A35832-9F1B-4D5E-9E84-87779681B930
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 1000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/F7A35832-9F1B-4D5E-9E84-87779681B93027600016BR.COM.PAGSEGURO0136F7A35832-9F1B-4D5E-9E84-87779681B930520489995303986540510.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***6304519A
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_F7A35832-9F1B-4D5E-9E84-87779681B930/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_F7A35832-9F1B-4D5E-9E84-87779681B930/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+            [0] => https://webhook.site/77f1f66a-35c4-423f-a76f-a032894faab9
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_552AC953-088D-4399-94D6-AC4B453C62E7
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_552AC953-088D-4399-94D6-AC4B453C62E7/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+
+
+2025-10-23 17:24:29
+Array
+(
+    [id] => ORDE_CA16C963-D4BB-48EB-90CC-501FC9820D0A
+    [reference_id] => pedido-1-1761240268
+    [created_at] => 2025-10-23T14:24:27.848-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-4
+                    [name] => Nome do produto
+                    [quantity] => 1
+                    [unit_amount] => 500000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_2F26AA96-8883-43A5-BC23-5BBE545857A7
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 500000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/2F26AA96-8883-43A5-BC23-5BBE545857A727600016BR.COM.PAGSEGURO01362F26AA96-8883-43A5-BC23-5BBE545857A752048999530398654075000.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***6304B66C
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_2F26AA96-8883-43A5-BC23-5BBE545857A7/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_2F26AA96-8883-43A5-BC23-5BBE545857A7/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+            [0] => https://webhook.site/77f1f66a-35c4-423f-a76f-a032894faab9
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_CA16C963-D4BB-48EB-90CC-501FC9820D0A
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_CA16C963-D4BB-48EB-90CC-501FC9820D0A/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+
+
+2025-10-23 17:29:35
+Array
+(
+    [id] => ORDE_A3029244-3978-4136-BD98-015805712214
+    [reference_id] => pedido-1-1761240573
+    [created_at] => 2025-10-23T14:29:33.205-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-21
+                    [name] => Arroz
+                    [quantity] => 1
+                    [unit_amount] => 1000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_DA5A4E56-92DB-4479-8550-05924CBC751D
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 1000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/DA5A4E56-92DB-4479-8550-05924CBC751D27600016BR.COM.PAGSEGURO0136DA5A4E56-92DB-4479-8550-05924CBC751D520489995303986540510.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***6304A37F
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_DA5A4E56-92DB-4479-8550-05924CBC751D/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_DA5A4E56-92DB-4479-8550-05924CBC751D/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+            [0] => https://webhook.site/77f1f66a-35c4-423f-a76f-a032894faab9
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_A3029244-3978-4136-BD98-015805712214
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_A3029244-3978-4136-BD98-015805712214/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)
+
+
+2025-10-23 17:31:19
+Array
+(
+    [id] => ORDE_1C184AE4-6845-42C0-A123-CD65418F74F9
+    [reference_id] => pedido-1-1761240678
+    [created_at] => 2025-10-23T14:31:17.437-03:00
+    [customer] => Array
+        (
+            [name] => jose teste
+            [email] => jose@gmail.com
+            [tax_id] => 12345678909
+            [phones] => Array
+                (
+                    [0] => Array
+                        (
+                            [type] => MOBILE
+                            [country] => 55
+                            [area] => 62
+                            [number] => 991098685
+                        )
+
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [reference_id] => item-22
+                    [name] => Nome do Produto
+                    [quantity] => 1
+                    [unit_amount] => 1000
+                )
+
+        )
+
+    [shipping] => Array
+        (
+            [address] => Array
+                (
+                    [street] => neymar
+                    [number] => 1384
+                    [complement] => q52 l7
+                    [locality] => Senador Canedo
+                    [city] => Goias
+                    [region_code] => GO
+                    [country] => BRA
+                    [postal_code] => 75258831
+                )
+
+        )
+
+    [qr_codes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => QRCO_E0800C2C-462A-41F7-8654-BC2C85D523CE
+                    [expiration_date] => 2025-10-24T23:59:59.000-03:00
+                    [amount] => Array
+                        (
+                            [value] => 1000
+                        )
+
+                    [text] => 00020101021226850014br.gov.bcb.pix2563api-h.pagseguro.com/pix/v2/E0800C2C-462A-41F7-8654-BC2C85D523CE27600016BR.COM.PAGSEGURO0136E0800C2C-462A-41F7-8654-BC2C85D523CE520489995303986540510.005802BR5922LACERDA COSTA NOGUEIRA6014Senador Canedo62070503***6304D3A0
+                    [arrangements] => Array
+                        (
+                            [0] => PIX
+                        )
+
+                    [links] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [rel] => QRCODE.PNG
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_E0800C2C-462A-41F7-8654-BC2C85D523CE/png
+                                    [media] => image/png
+                                    [type] => GET
+                                )
+
+                            [1] => Array
+                                (
+                                    [rel] => QRCODE.BASE64
+                                    [href] => https://sandbox.api.pagseguro.com/qrcode/QRCO_E0800C2C-462A-41F7-8654-BC2C85D523CE/base64
+                                    [media] => text/plain
+                                    [type] => GET
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [notification_urls] => Array
+        (
+            [0] => https://webhook.site/77f1f66a-35c4-423f-a76f-a032894faab9
+        )
+
+    [links] => Array
+        (
+            [0] => Array
+                (
+                    [rel] => SELF
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_1C184AE4-6845-42C0-A123-CD65418F74F9
+                    [media] => application/json
+                    [type] => GET
+                )
+
+            [1] => Array
+                (
+                    [rel] => PAY
+                    [href] => https://sandbox.api.pagseguro.com/orders/ORDE_1C184AE4-6845-42C0-A123-CD65418F74F9/pay
+                    [media] => application/json
+                    [type] => POST
+                )
+
+        )
+
+)

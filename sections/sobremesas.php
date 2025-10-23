@@ -4,13 +4,13 @@ $incluir_rodape = !isset($GLOBALS['incluir_rodape']) || $GLOBALS['incluir_rodape
 
 // Incluir o header.php somente se o arquivo estiver sendo acessado diretamente
 if (basename($_SERVER['PHP_SELF']) == 'sobremesas.php') {
-    include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico/header.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico-full/header.php';
 }
 ?> 
 
 <?php
 require_once dirname(__DIR__) . '/db/conexao.php';
-$base_url = '/cardapio-dinamico/admin/uploads/produtos/';
+$base_url = '/cardapio-dinamico-full/admin/uploads/produtos/';
 
 $stmt = $pdo->prepare("SELECT * FROM produtos WHERE categoria = 'sobremesas' ORDER BY nome");
 $stmt->execute();
@@ -86,7 +86,7 @@ $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- Inclusão do rodapé se o arquivo estiver sendo acessado diretamente -->
     <?php if ($incluir_rodape): ?>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico/footer.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico-full/footer.php'; ?>
     <?php endif; ?>
 
     <!-- Inclui o script.js se a página for acessada diretamente -->

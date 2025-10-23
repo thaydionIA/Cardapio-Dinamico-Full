@@ -10,7 +10,7 @@ if (session_status() == PHP_SESSION_NONE) {
 // Verificar se o cliente está logado
 if (!isset($_SESSION['user_id'])) {
     // Redirecionar para a página de login se o usuário não estiver logado
-    header('Location: /cardapio-dinamico/login.php');
+    header('Location: /cardapio-dinamico-full/login.php');
     exit();
 }
 
@@ -45,7 +45,7 @@ $pdo = null;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento Em Dinheiro </title>
-    <link rel="stylesheet" href="/cardapio-dinamico/assets/css/style.css">
+    <link rel="stylesheet" href="/cardapio-dinamico-full/assets/css/style.css">
     <style>
         /* Estilo para o botão de voltar */
         .btn-voltar {
@@ -110,7 +110,7 @@ $pdo = null;
 
         <!-- Botão para voltar à página inicial -->
         <div class="btn-container">
-            <a href="/cardapio-dinamico/index.php" class="btn-voltar">Voltar para a Página Inicial</a>
+            <a href="/cardapio-dinamico-full/index.php" class="btn-voltar">Voltar para a Página Inicial</a>
         </div>
     </main>
 

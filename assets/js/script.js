@@ -1,6 +1,6 @@
 // Função para atualizar o contador do carrinho
 function atualizarContadorCarrinho() {
-    fetch('/cardapio-dinamico/atualizar_carrinho.php')
+    fetch('/cardapio-dinamico-full/atualizar_carrinho.php')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Erro na resposta do servidor');
@@ -63,7 +63,7 @@ function adicionarListeners() {
             const produtoId = form.querySelector('input[name="produto_id"]').value;
             const quantidade = form.querySelector('input[name="quantidade"]').value;
 
-            fetch('/cardapio-dinamico/adicionar_ao_carrinho.php', {
+            fetch('/cardapio-dinamico-full/adicionar_ao_carrinho.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',

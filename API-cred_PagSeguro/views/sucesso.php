@@ -13,7 +13,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // Verifica se o cliente está logado
 if (!isset($_SESSION['user_id'])) {
-    header('Location: /cardapio-dinamico/login.php');
+    header('Location: /cardapio-dinamico-full/login.php');
     exit();
 }
 
@@ -98,7 +98,7 @@ try {
             <strong>Total Pago:</strong> R$ <?= number_format($valor_total, 2, ',', '.') ?>
         </div>
 
-        <a href="/cardapio-dinamico/index.php" class="btn-voltar">
+        <a href="/cardapio-dinamico-full/index.php" class="btn-voltar">
             <i class="bi bi-house-door"></i> Voltar ao Início
         </a>
     </div>

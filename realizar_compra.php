@@ -2,7 +2,7 @@
 ob_start(); // Inicia o buffer de saída
 session_start();
 require_once 'db/conexao.php'; // Ajuste o caminho conforme necessário
-include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico/header.php'; // Inclua o cabeçalho se necessário
+include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico-full/header.php'; // Inclua o cabeçalho se necessário
 
 // Verifica se o usuário está logado e se o carrinho não está vazio
 if (!isset($_SESSION['user_id']) || empty($_SESSION['carrinho'])) {
@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['forma_pagamento'])) {
     $forma_pagamento = $_POST['forma_pagamento'];
 
     // URLs para diferentes métodos de pagamento
-    $url_api_pix = '/cardapio-dinamico/PIXPAGSEGURO/controllers/PaymentControllerPix.php'; // URL específica para o pagamento via PIX
-    $url_api_credito = '/cardapio-dinamico/API-cred_PagSeguro/views/index.php'; // URL para o pagamento via crédito
+    $url_api_pix = '/cardapio-dinamico-full/PIXPAGSEGURO/controllers/PaymentControllerPix.php'; // URL específica para o pagamento via PIX
+    $url_api_credito = '/cardapio-dinamico-full/API-cred_PagSeguro/views/index.php'; // URL para o pagamento via crédito
     
     if ($forma_pagamento === 'pix') {
         // Redirecionar para o arquivo específico de pagamento via PIX

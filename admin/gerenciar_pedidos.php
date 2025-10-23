@@ -1,7 +1,7 @@
 <?php 
 // Incluir o header.php somente se o arquivo estiver sendo acessado diretamente
 if (basename($_SERVER['PHP_SELF']) == 'gerenciar_pedidos.php') {
-    include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico/header-ad.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico-full/header-ad.php';
 }
 
 // Iniciar a sessão se ainda não estiver ativa
@@ -249,5 +249,5 @@ $pedidos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <?php 
 // Incluir o footer.php
-include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico/footer-ad.php'; 
+include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico-full/footer-ad.php'; 
 ?>

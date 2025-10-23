@@ -196,11 +196,11 @@ class PayController {
             }
 
             // Redireciona para a página de sucesso
-            header('Location: /cardapio-dinamico/API-cred_PagSeguro/views/sucesso.php');
+            header('Location: /cardapio-dinamico-full/API-cred_PagSeguro/views/sucesso.php');
             exit();
         } else {
             // Redireciona para a página de falha
-            header('Location: /cardapio-dinamico/API-cred_PagSeguro/views/falha.php');
+            header('Location: /cardapio-dinamico-full/API-cred_PagSeguro/views/falha.php');
             exit();
         }
     }

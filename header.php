@@ -12,7 +12,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio - <?php echo $site_name; ?></title>
-    <link rel="stylesheet" href="/cardapio-dinamico/assets/css/style.css">
+    <link rel="stylesheet" href="/cardapio-dinamico-full/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -173,12 +173,12 @@ if (session_status() === PHP_SESSION_NONE) {
 
 <header>
     <div class="logo-container">
-        <img src="/cardapio-dinamico/path/logo.jpg" alt="Logo do Cliente" class="logo">
+        <img src="/cardapio-dinamico-full/path/logo.jpg" alt="Logo do Cliente" class="logo">
     </div>
 
     <!-- Ícones responsivos de home e menu -->
     <div class="responsive-icons">
-        <a href="/cardapio-dinamico/index.php">
+        <a href="/cardapio-dinamico-full/index.php">
             <i class="fas fa-home"></i> <!-- Ícone de Home -->
         </a>
         <a href="javascript:void(0);" onclick="toggleMenu()">
@@ -188,12 +188,12 @@ if (session_status() === PHP_SESSION_NONE) {
 
     <!-- Botão "Retornar ao Início" -->
     <div class="return-button-container">
-        <a href="/cardapio-dinamico/index.php" class="return-button">Retornar ao Início</a>
+        <a href="/cardapio-dinamico-full/index.php" class="return-button">Retornar ao Início</a>
     </div>
 
     <!-- Barra de busca com ícone dentro -->
     <div class="search-container">
-        <form action="/cardapio-dinamico/busca.php" method="GET">
+        <form action="/cardapio-dinamico-full/busca.php" method="GET">
             <input type="text" name="q" placeholder="Buscar produtos..." required>
             <button type="submit">
                 <i class="fas fa-search"></i> <!-- Ícone de busca (lupa) -->
@@ -202,7 +202,7 @@ if (session_status() === PHP_SESSION_NONE) {
     </div>
 
     <!-- Ícone do carrinho de compras -->
-    <div class="cart-icon" onclick="window.location.href='/cardapio-dinamico/carrinho.php'">
+    <div class="cart-icon" onclick="window.location.href='/cardapio-dinamico-full/carrinho.php'">
         <i class="fas fa-shopping-cart"></i>
         <?php if (isset($_SESSION['user_id'])): ?>
             <span id="cart-count" class="cart-count">0</span>
@@ -214,7 +214,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <nav>
         <ul>
             <?php foreach ($sections as $id => $section): ?>
-                <li><a href="/cardapio-dinamico/<?php echo $section['url']; ?>"><?php echo $section['title']; ?></a></li>
+                <li><a href="/cardapio-dinamico-full/<?php echo $section['url']; ?>"><?php echo $section['title']; ?></a></li>
             <?php endforeach; ?>
         </ul>
     </nav>
@@ -223,7 +223,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <!-- Menu dropdown para o ícone de hambúrguer -->
 <div id="dropdownMenu" class="dropdown-menu">
     <?php foreach ($sections as $id => $section): ?>
-        <a href="/cardapio-dinamico/<?php echo $section['url']; ?>"><?php echo $section['title']; ?></a>
+        <a href="/cardapio-dinamico-full/<?php echo $section['url']; ?>"><?php echo $section['title']; ?></a>
     <?php endforeach; ?>
 </div>
 

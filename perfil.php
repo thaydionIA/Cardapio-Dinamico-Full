@@ -161,7 +161,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['excluir_perfil'])) {
 $incluir_rodape = !isset($GLOBALS['incluir_rodape']) || $GLOBALS['incluir_rodape'];
 
 // Incluir o cabeçalho
-include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico-full/header.php';
 ?>
 
 <!DOCTYPE html>
@@ -238,7 +238,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico/header.php';
     </div>
 
     <?php if ($incluir_rodape): ?>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico/footer.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico-full/footer.php'; ?>
     <?php endif; ?>
      <!-- Inclui o arquivo de JavaScript centralizado -->
      <script src="assets/js/script.js"></script>

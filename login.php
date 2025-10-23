@@ -38,13 +38,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/cardapio-dinamico/assets/css/login.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="/cardapio-dinamico-full/assets/css/login.css?v=<?php echo time(); ?>">
 </head>
 <body>
 
 <header>
 <div style="display: flex; align-items: center; position: relative; width: 100%;">
-    <img src="/cardapio-dinamico/path/logo.jpg" alt="Logo do Site" style="height: 60px; margin-right: 15px;">
+    <img src="/cardapio-dinamico-full/path/logo.jpg" alt="Logo do Site" style="height: 60px; margin-right: 15px;">
     <h1 style="position: absolute; left: 50%; transform: translateX(-50%); margin: 0;">Bem-vindo ao Sistema</h1>
 </div>
 </header>
@@ -70,10 +70,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             <button type="submit">Entrar</button>
 
-            <p class="no-account">Não tem uma conta? <a href="/cardapio-dinamico/cadastro.php">Cadastre-se</a></p>
+            <p class="no-account">Não tem uma conta? <a href="/cardapio-dinamico-full/cadastro.php">Cadastre-se</a></p>
 
             <!-- Link para a página de recuperação de senha -->
-            <p class="forgot-password"><a href="/cardapio-dinamico/esqueceu_senha.php">Esqueceu a senha?</a></p>
+            <p class="forgot-password"><a href="/cardapio-dinamico-full/esqueceu_senha.php">Esqueceu a senha?</a></p>
         </form>
     </div>
 </main>

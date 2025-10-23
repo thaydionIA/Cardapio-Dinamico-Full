@@ -2,9 +2,9 @@
 include 'header.php'; // Inclui o header
 
 // Caminho correto para o arquivo de conexão
-require_once $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico/db/conexao.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico-full/db/conexao.php';
 
-$base_url = '/cardapio-dinamico/admin/uploads/produtos/';
+$base_url = '/cardapio-dinamico-full/admin/uploads/produtos/';
 $termo_busca = isset($_GET['q']) ? $_GET['q'] : ''; // Obtém o termo de busca
 
 // Consulta para buscar produtos com base no termo de pesquisa

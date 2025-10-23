@@ -208,7 +208,7 @@ $is_admin = isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin';
 <body>
     <header>
         <div class="logo-container">
-            <img src="/cardapio-dinamico/path/logo.jpg" alt="Logo do Site">
+            <img src="/cardapio-dinamico-full/path/logo.jpg" alt="Logo do Site">
             <h1 class="site-title"><?php echo $site_name; ?></h1>
         </div>
 
@@ -224,7 +224,7 @@ $is_admin = isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin';
             </div>
 
             <!-- Ícone do carrinho de compras -->
-            <div class="cart-icon" onclick="window.location.href='/cardapio-dinamico/carrinho.php'">
+            <div class="cart-icon" onclick="window.location.href='/cardapio-dinamico-full/carrinho.php'">
                 <i class="fas fa-shopping-cart"></i>
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <span id="cart-count" class="cart-count <?php echo ($_SESSION['cart_count'] > 0) ? '' : 'hidden'; ?>">
@@ -302,7 +302,7 @@ $is_admin = isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin';
 
     <footer>
         <?php
-    include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico/footer.php';?>
+    include $_SERVER['DOCUMENT_ROOT'] . '/cardapio-dinamico-full/footer.php';?>
         <?php 
         if ($is_admin && file_exists('admin/logout.php')) {
             include 'admin/logout.php';
