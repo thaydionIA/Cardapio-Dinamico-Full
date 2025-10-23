@@ -1,97 +1,112 @@
 <?php
-// Incluir arquivo de conexão com o banco de dados
-include '../../db/conexao.php'; // Verifique se o caminho está correto
+// ==============================
+// ✅ SUCESSO.PHP — PÓS-PAGAMENTO
+// ==============================
 
-// Verificar se a sessão já foi iniciada
-if (session_status() == PHP_SESSION_NONE) {
+// Inclui conexão com o banco (ajuste o caminho se necessário)
+require_once __DIR__ . '/../../db/conexao.php';
+
+// Inicia sessão se necessário
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Verificar se o cliente está logado
+// Verifica se o cliente está logado
 if (!isset($_SESSION['user_id'])) {
-    // Redirecionar para a página de login se o usuário não estiver logado
     header('Location: /cardapio-dinamico/login.php');
     exit();
 }
 
-$cliente_id = $_SESSION['user_id']; // Pegar o ID do cliente logado
-
-// Recalcular o valor total do carrinho
+$cliente_id = $_SESSION['user_id'];
 $valor_total = 0;
-if (isset($_SESSION['carrinho'])) {
-    foreach ($_SESSION['carrinho'] as $produto_id => $quantidade) {
-        // Consultar o preço do produto no banco de dados
-        $stmt = $pdo->prepare("SELECT preco FROM produtos WHERE id = :id");
-        $stmt->bindParam(':id', $produto_id);
-        $stmt->execute();
-        $produto = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($produto) {
-            $subtotal = $produto['preco'] * $quantidade;
-            $valor_total += $subtotal;
+try {
+    if (isset($_SESSION['carrinho']) && !empty($_SESSION['carrinho'])) {
+        foreach ($_SESSION['carrinho'] as $produto_id => $quantidade) {
+            $stmt = $pdo->prepare("SELECT preco FROM produtos WHERE id = :id");
+            $stmt->bindParam(':id', $produto_id, PDO::PARAM_INT);
+            $stmt->execute();
+            $produto = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($produto) {
+                $valor_total += $produto['preco'] * $quantidade;
+            }
         }
+
+        // Registra a venda
+        $stmt = $pdo->prepare("
+            INSERT INTO vendas (cliente_id, total, status, status_pedido)
+            VALUES (:cliente_id, :total, 'Pago (Cartão De Crédito)', 'Pedido Feito')
+        ");
+        $stmt->execute([
+            ':cliente_id' => $cliente_id,
+            ':total' => $valor_total
+        ]);
+        $venda_id = $pdo->lastInsertId();
+
+        // Registra itens da venda
+        foreach ($_SESSION['carrinho'] as $produto_id => $quantidade) {
+            $stmt = $pdo->prepare("
+                INSERT INTO itens_venda (venda_id, produto_id, quantidade, preco)
+                SELECT :venda_id, id, :quantidade, preco FROM produtos WHERE id = :produto_id
+            ");
+            $stmt->execute([
+                ':venda_id' => $venda_id,
+                ':quantidade' => $quantidade,
+                ':produto_id' => $produto_id
+            ]);
+        }
+
+        // Limpa carrinho (banco + sessão)
+        $stmt = $pdo->prepare("DELETE FROM carrinho WHERE usuario_id = ?");
+        $stmt->execute([$cliente_id]);
+        unset($_SESSION['carrinho']);
     }
+
+    $stmt = null;
+    $pdo = null;
+} catch (Exception $e) {
+    echo "<pre style='color:red;'>Erro: " . $e->getMessage() . "</pre>";
 }
-
-// Fechar a conexão
-$stmt = null;
-$pdo = null;
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamento Realizado com Sucesso</title>
-    <link rel="stylesheet" href="/cardapio-dinamico/assets/css/style.css">
-    <style>
-        /* Estilo para o botão de voltar */
-        .btn-voltar {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #d4af37; /* Cor dourada */
-            color: #1c1c1c; /* Cor escura para o texto */
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+    <title>Pagamento Confirmado | Cardápio Dinâmico</title>
 
-        .btn-voltar:hover {
-            background-color: #ecbe54; /* Cor mais clara ao passar o mouse */
-        }
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-        .btn-container {
-            text-align: center; /* Centralizar o botão */
-            margin-top: 20px;
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/sucesso.css">
 </head>
 <body>
-    <header>
-        <h1>Pagamento Realizado com Sucesso!</h1>
-    </header>
-
-    <main>
-        <div class="banner">
-            <h2>Seu pagamento foi processado com sucesso.</h2>
-            <p>Obrigado pela sua compra! Em breve você receberá um e-mail de confirmação com os detalhes da sua compra.</p>
+    <div class="success-container">
+        <div class="checkmark">
+            <svg class="checkmark-svg" viewBox="0 0 52 52">
+                <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="checkmark-check" fill="none" d="M14 27l7 7 16-16"/>
+            </svg>
         </div>
 
-        <!-- Botão para voltar à página inicial -->
-        <div class="btn-container">
-            <a href="/cardapio-dinamico/index.php" class="btn-voltar">Voltar para a Página Inicial</a>
+        <h1>Pagamento realizado com sucesso!</h1>
+        <p class="subtitle">Seu pedido foi confirmado e está sendo processado. 🛍️</p>
+
+        <div class="valor">
+            <strong>Total Pago:</strong> R$ <?= number_format($valor_total, 2, ',', '.') ?>
         </div>
-    </main>
+
+        <a href="/cardapio-dinamico/index.php" class="btn-voltar">
+            <i class="bi bi-house-door"></i> Voltar ao Início
+        </a>
+    </div>
 
     <footer>
-        <p>© 2024 Seu Site - Todos os direitos reservados.</p>
+        <p>© <?= date('Y') ?> Cardápio Dinâmico • Todos os direitos reservados.</p>
     </footer>
+
+    <script src="../assets/js/sucesso.js"></script>
 </body>
 </html>
