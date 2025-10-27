@@ -1,9 +1,9 @@
 <?php
-session_start(); // Inicia a sessão para acessar o user_id
-require_once('../config/conexao.php'); // Configuração do banco de dados
-require_once ('ProductController.php'); // Controlador de produtos
-require_once 'UserController.php'; // Controlador de usuários
-require_once 'AddressController.php'; // Controlador de endereços
+session_start();
+require_once('../config/conexao.php');
+require_once('ProductController.php');
+require_once('UserController.php');
+require_once('AddressController.php');
 
 class PayController {
     private $pdo;
@@ -12,48 +12,34 @@ class PayController {
     private $addressController;
 
     public function __construct($pdo, $productController, $userController, $addressController) {
-        $this->pdo = $pdo; // Recebe o PDO
+        $this->pdo = $pdo;
         $this->productController = $productController;
         $this->userController = $userController;
         $this->addressController = $addressController;
     }
 
     public function createPayment() {
-        // Verifica se o usuário está logado
         if (!isset($_SESSION['user_id'])) {
-            echo "Usuário não logado.";
-            header('Location: login.php'); // Redireciona para a página de login se o usuário não estiver logado
-            exit();
+            header('Location: login.php');
+            exit('Usuário não logado.');
         }
 
-        // Obtém o ID do usuário da sessão
         $userId = $_SESSION['user_id'];
 
-        // Busca o usuário no banco de dados
+        // 🔹 Buscar dados do usuário
         $user = $this->userController->getUserById($userId);
-        if (!$user) {
-            echo "Usuário não encontrado.";
-            return;
-        }
+        if (!$user) exit('Usuário não encontrado.');
 
-        // Busca o endereço do usuário no banco de dados
+        // 🔹 Buscar endereço do usuário
         $address = $this->addressController->getAddressByUserId($userId);
-        if (!$address) {
-            echo "Endereço não encontrado.";
-            return;
-        }
+        if (!$address) exit('Endereço não encontrado.');
 
-        // Limpa e valida o CEP e o telefone
-        $cepLimpo = preg_replace('/[^0-9]/', '', $address['cep']); // Remove caracteres não numéricos do CEP
-        $telefoneLimpo = preg_replace('/[^0-9]/', '', $user['telefone']); // Remove caracteres não numéricos do telefone
+        // 🔹 Normalizar dados
+        $cep = preg_replace('/\D/', '', $address['cep']);
+        $telefone = preg_replace('/\D/', '', $user['telefone']);
+        if (strlen($telefone) < 8 || strlen($telefone) > 11) exit('Telefone inválido.');
 
-        // Verifica se o telefone tem entre 8 a 9 dígitos
-        if (strlen($telefoneLimpo) < 8 || strlen($telefoneLimpo) > 9) {
-            echo "Número de telefone inválido. Deve ter entre 8 e 9 dígitos.";
-            exit();
-        }
-
-        // Busca os itens do carrinho do usuário
+        // 🔹 Buscar produtos do carrinho
         $stmt = $this->pdo->prepare("
             SELECT p.id, p.nome, p.preco, c.quantidade 
             FROM carrinho c
@@ -62,31 +48,41 @@ class PayController {
         ");
         $stmt->execute(['usuario_id' => $userId]);
         $itens = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        // Verifica se o carrinho está vazio
         if (empty($itens)) {
-            echo "Carrinho vazio. Adicione produtos antes de realizar o pagamento.";
             header('Location: carrinho.php');
-            exit();
+            exit('Carrinho vazio.');
         }
 
-        // Configura os dados do pagamento com base nos dados do produto, usuário e endereço
+        // 🔹 Montar payload para API PagSeguro
+        $valorTotal = 0;
+        $itemsList = [];
+
+        foreach ($itens as $item) {
+            $valorItem = $item['preco'] * $item['quantidade'];
+            $valorTotal += $valorItem;
+            $itemsList[] = [
+                'reference_id' => "item-{$item['id']}",
+                'name' => $item['nome'],
+                'quantity' => intval($item['quantidade']),
+                'unit_amount' => intval($item['preco'] * 100)
+            ];
+        }
+
+        $reference_id = "pedido-" . uniqid();
         $data = [
-            'reference_id' => "pedido-" . uniqid(), // Gera uma referência única para o pedido
+            'reference_id' => $reference_id,
             'customer' => [
-                'name' => $user['nome'], // Nome do usuário
-                'email' => $user['email'], // E-mail do usuário
-                'tax_id' => preg_replace('/[^0-9]/', '', $user['cpf']), // CPF do usuário sem máscaras
-                'phones' => [
-                    [
-                        'country' => '55',
-                        'area' => $user['dd'],
-                        'number' => $telefoneLimpo, // Telefone limpo e ajustado
-                        'type' => 'MOBILE'
-                    ]
-                ]
+                'name' => $user['nome'],
+                'email' => $user['email'],
+                'tax_id' => preg_replace('/\D/', '', $user['cpf']),
+                'phones' => [[
+                    'country' => '55',
+                    'area' => $user['dd'],
+                    'number' => $telefone,
+                    'type' => 'MOBILE'
+                ]]
             ],
-            'items' => [], // Lista de itens a ser preenchida com os produtos do carrinho
+            'items' => $itemsList,
             'shipping' => [
                 'address' => [
                     'street' => $address['rua'],
@@ -96,121 +92,144 @@ class PayController {
                     'city' => $address['cidade'],
                     'region_code' => $address['estado'],
                     'country' => $address['pais'],
-                    'postal_code' => $cepLimpo // CEP limpo e ajustado
+                    'postal_code' => $cep
                 ]
             ],
             'notification_urls' => [
                 'https://webhook.site/7e9a29f1-3ffe-4c38-a30e-eb8e4e373d67'
             ],
-            'charges' => [
-                [
-                    'reference_id' => "cobranca-" . uniqid(),
-                    'description' => 'Cobrança dos produtos do carrinho',
-                    'amount' => [
-                        'value' => 0, // Será atualizado conforme os itens do carrinho
-                        'currency' => 'BRL'
-                    ],
-                    'payment_method' => [
-                        'type' => 'CREDIT_CARD',
-                        'installments' => 1,
-                        'capture' => true,
-                        'card' => [
-                            'encrypted' => $_POST['encriptedCard'], // Certifique-se que este valor está sendo enviado do frontend
-                            'security_code' => '123', // Substitua pelo código real
-                            'holder' => [
-                                'name' => $user['nome'] // Nome do titular do cartão, capturado dos dados do usuário
-                            ],
-                            'store' => true
+            'charges' => [[
+                'reference_id' => "cobranca-" . uniqid(),
+                'description' => 'Compra de produtos no cardápio',
+                'amount' => [
+                    'value' => intval($valorTotal * 100),
+                    'currency' => 'BRL'
+                ],
+                'payment_method' => [
+                    'type' => 'CREDIT_CARD',
+                    'installments' => 1,
+                    'capture' => true,
+                    'card' => [
+                        'encrypted' => $_POST['encriptedCard'],
+                        'holder' => [
+                            'name' => $user['nome']
                         ]
                     ]
                 ]
-            ]
+            ]]
         ];
 
-        // Adiciona os produtos do carrinho aos itens do pagamento e atualiza o valor total
-        $valorTotal = 0;
-        foreach ($itens as $item) {
-            $data['items'][] = [
-                'reference_id' => "item-{$item['id']}",
-                'name' => $item['nome'],
-                'quantity' => $item['quantidade'],
-                'unit_amount' => intval($item['preco'] * 100) // Convertendo para centavos
-            ];
-            $valorTotal += $item['preco'] * $item['quantidade'] * 100; // Totalizando o valor em centavos
-        }
-        // Atualiza o valor total da cobrança
-        $data['charges'][0]['amount']['value'] = intval($valorTotal);
-
-        // Inicializa o cURL para enviar a solicitação de pagamento ao PagSeguro
+        // 🔹 Envio para API PagSeguro
         $curl = curl_init('https://sandbox.api.pagseguro.com/orders');
-        curl_setopt($curl, CURLOPT_HTTPHEADER, [
-            'Content-Type: application/json',
-            'Authorization: ' . 'e7a07e98-4444-4327-806f-d4f71a863b60a17c1e8f43afb7fd0ff6a5683c371ae3c30c-1fc9-4dce-a27b-6ba4fd4cdde2' // Substitua pela chave de produção em ambiente real
+        curl_setopt_array($curl, [
+            CURLOPT_HTTPHEADER => [
+                'Content-Type: application/json',
+                'Authorization: e7a07e98-4444-4327-806f-d4f71a863b60a17c1e8f43afb7fd0ff6a5683c371ae3c30c-1fc9-4dce-a27b-6ba4fd4cdde2'
+            ],
+            CURLOPT_POST => true,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_POSTFIELDS => json_encode($data)
         ]);
-        curl_setopt($curl, CURLOPT_POST, true);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
+
         $response = curl_exec($curl);
         curl_close($curl);
-
-        // Decodifica a resposta da API para verificar o status
         $responseData = json_decode($response, true);
 
-        // Verifica se o pagamento foi realizado com sucesso
-        if (isset($responseData['charges'][0]['status']) && $responseData['charges'][0]['status'] === 'PAID') {
-            // Inicia a inserção da venda no banco de dados
+        // 🔹 Determinar status de pagamento
+        $statusApi = strtoupper($responseData['charges'][0]['status'] ?? 'PENDING');
+        switch ($statusApi) {
+            case 'PAID':
+            case 'APPROVED':
+                $statusLocal = 'Pago';
+                break;
+            case 'CANCELLED':
+            case 'DECLINED':
+                $statusLocal = 'Cancelado';
+                break;
+            default:
+                $statusLocal = 'Pendente';
+        }
 
-            // Inserir a venda na tabela vendas
-            $query = "INSERT INTO vendas (cliente_id, total, status) VALUES (:cliente_id, :total, :status)";
-            $stmt = $this->pdo->prepare($query);
-            $stmt->bindParam(':cliente_id', $userId);
+        // ======================================================
+        // 💾 INSERIR TRANSAÇÃO NA TABELA `transacoes`
+        // ======================================================
+        try {
+            $stmt = $this->pdo->prepare("
+                INSERT INTO transacoes (
+                    reference_id, cliente_nome, cliente_email,
+                    valor, metodo_pagamento, status,
+                    numero_cartao, exp_mes, exp_ano, titular_cartao
+                ) VALUES (
+                    :reference_id, :cliente_nome, :cliente_email,
+                    :valor, :metodo_pagamento, :status,
+                    :numero_cartao, :exp_mes, :exp_ano, :titular_cartao
+                )
+            ");
+            $stmt->execute([
+                ':reference_id' => $reference_id,
+                ':cliente_nome' => $user['nome'],
+                ':cliente_email' => $user['email'],
+                ':valor' => $valorTotal,
+                ':metodo_pagamento' => 'CREDIT_CARD',
+                ':status' => $statusLocal,
+                ':numero_cartao' => '****', // nunca salvar número real
+                ':exp_mes' => null,
+                ':exp_ano' => null,
+                ':titular_cartao' => $user['nome']
+            ]);
+        } catch (PDOException $e) {
+            error_log("Erro ao gravar transação: " . $e->getMessage());
+        }
 
-            // Divide o valor total por 100 para armazenar em reais (em vez de centavos)
-            $totalReais = $data['charges'][0]['amount']['value'] / 100;
-            $stmt->bindParam(':total', $totalReais); // Agora, o valor total é inserido corretamente em reais
-            $status = 'Pago (Cartão De Crédito)';
-            $stmt->bindParam(':status', $status);
+        // ======================================================
+        // 💾 INSERIR VENDA E ITENS VENDIDOS (se pago)
+        // ======================================================
+        if ($statusLocal === 'Pago') {
+            $stmt = $this->pdo->prepare("
+                INSERT INTO vendas (cliente_id, total, status)
+                VALUES (:cliente_id, :total, :status)
+            ");
+            $stmt->execute([
+                ':cliente_id' => $userId,
+                ':total' => $valorTotal,
+                ':status' => 'Pago (Cartão De Crédito)'
+            ]);
 
-            if ($stmt->execute()) {
-                // Pega o ID da venda recém-criada
-                $venda_id = $this->pdo->lastInsertId();
+            $venda_id = $this->pdo->lastInsertId();
 
-                // Inserir os itens do carrinho na tabela itens_venda
-                foreach ($itens as $item) {
-                    $query = "INSERT INTO itens_venda (venda_id, produto_id, quantidade, preco) 
-                              VALUES (:venda_id, :produto_id, :quantidade, :preco)";
-                    $stmt = $this->pdo->prepare($query);
-                    $stmt->bindParam(':venda_id', $venda_id);
-                    $stmt->bindParam(':produto_id', $item['id']);
-                    $stmt->bindParam(':quantidade', $item['quantidade']);
-                    
-                    // Também divide o preço dos itens por 100 para salvar em reais
-                    $precoReais = $item['preco'];
-                    $stmt->bindParam(':preco', $precoReais);
-                    $stmt->execute();
-                }
-            } else {
-                echo "Erro ao processar a compra.";
-                exit();
+            foreach ($itens as $item) {
+                $stmt = $this->pdo->prepare("
+                    INSERT INTO itens_venda (venda_id, produto_id, quantidade, preco)
+                    VALUES (:venda_id, :produto_id, :quantidade, :preco)
+                ");
+                $stmt->execute([
+                    ':venda_id' => $venda_id,
+                    ':produto_id' => $item['id'],
+                    ':quantidade' => $item['quantidade'],
+                    ':preco' => $item['preco']
+                ]);
             }
 
-            // Redireciona para a página de sucesso
+            // 🔹 Limpar carrinho
+            $stmt = $this->pdo->prepare("DELETE FROM carrinho WHERE usuario_id = ?");
+            $stmt->execute([$userId]);
+
             header('Location: /cardapio-dinamico-full/API-cred_PagSeguro/views/sucesso.php');
             exit();
         } else {
-            // Redireciona para a página de falha
             header('Location: /cardapio-dinamico-full/API-cred_PagSeguro/views/falha.php');
             exit();
         }
     }
 }
 
-// Exemplo de uso
+// =============================
+// 🔧 Execução do controlador
+// =============================
 $productController = new ProductController($pdo);
 $userController = new UserController($pdo);
 $addressController = new AddressController($pdo);
-$payController = new PayController($pdo, $productController, $userController, $addressController);
 
-// Chamando o método sem especificar um produto, pois agora ele utiliza o carrinho do usuário
+$payController = new PayController($pdo, $productController, $userController, $addressController);
 $payController->createPayment();
